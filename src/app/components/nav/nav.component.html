@@ -1,0 +1,19 @@
+<div class="header">
+    <div class="left">
+     
+        <mat-icon routerLink='/' class="navIcon">home</mat-icon>
+            
+
+        <mat-icon routerLink='/favorite' class="navIcon">favorite</mat-icon>
+
+    </div>
+    <div class="right">
+
+
+        <button  class="mod" id="Mod" (click)="changeMode()" [innerHTML]="currentIconTheme"  ></button>
+        <div  class="navIcon" id="Unit" (click)="changeUnits()" [innerHTML]="currentUnit" ></div>
+       
+            
+        
+    </div>
+</div>

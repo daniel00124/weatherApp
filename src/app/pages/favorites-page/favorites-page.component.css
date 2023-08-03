@@ -1,0 +1,143 @@
+
+::ng-deep :root {
+  
+
+    --item_width: 250px;
+    --item_border_radius: 16px;
+    --blur_amount: 2px;
+    --blur_amount_hover: 3px;
+    --scale_amount :1.1;
+  
+  
+
+    --item_color: rgba(0,0,0,0.2);
+    --text_color: rgba(255,255,255,250);
+    --border_highlights : rgba(255,255,255,0.3);
+  
+  
+    --day_size : 25px;
+    --des_size : 15px;
+    --temp_size : 25px;
+  
+  }
+
+  
+  #title{
+    cursor: unset;
+  }
+
+  h1{
+    color:white
+
+  }
+  .list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .item{
+      position : relative;
+      background-color: var(--item_color);
+      color: var(--text_color);
+  
+      border-radius: var(--item_border_radius);
+      height: 100%;
+      align-items: stretch;
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+  
+      box-shadow: 20px 20px  50px rgba(0,0,0,0.5);
+      border-top: 1px solid var(--border_highlights);
+      border-left: 1px solid var(--border_highlights);
+      backdrop-filter: blur(var(--blur_amount));
+      margin-right: 30px;
+      margin-left: 30px;
+
+  
+      transition: all 0.3s ease 0s;
+  
+  }
+  .lower .item{
+    width: 250px;
+  } 
+  .item:hover{
+    background-color: var(--item_color);
+    backdrop-filter: blur(var(--blur_amount_hover));
+    transform: scale(var(--scale_amount));
+    color: var(--text_color);
+  
+  
+    cursor: pointer;
+  }
+  
+  .noLocation{
+    display: flex;
+    justify-content: space-around;
+    margin: 5%;
+    }
+  .noLocation:hover{
+    cursor: unset;
+  }
+  
+  .item *
+  {
+    z-index: 700;
+    flex: 1;
+    padding: 20px;
+    backface-visibility: hidden;    
+    
+  }
+  
+  .item .day{
+    font-size: var(--day_size);
+    position: relative;
+    padding-bottom:unset ;
+  }
+  
+  
+  .item .logo{
+    position: relative;
+  }
+
+  .item .icons{
+    padding-bottom:unset ;
+  }
+  
+  .item .row{
+  
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+  
+      width: 100%;
+      margin: 0 0px;
+      padding-top: unset;
+  }
+
+
+  
+  .item .row *{
+  
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: var(--temp_size);
+    
+  }
+
+  .upper{
+    width: 100%;
+    margin-bottom:75px ;
+  }
+  .lower{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+  }

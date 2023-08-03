@@ -1,0 +1,66 @@
+<form>
+    <mat-form-field appearance="outline" class="round">
+      <span matPrefix> </span>
+      <input 
+       type="text"
+       matInput 
+       placeholder="Search for a city"
+       name= "search" 
+       [formControl]="control"
+       [matAutocomplete]="auto"
+       (keypress)="checkEnglish($event)"
+       (paste)="false"
+       (keyup)="getLocations($event)"
+       >
+      <button matSuffix mat-button (click)="submit()"><mat-icon >search</mat-icon></button>
+      </mat-form-field>
+    <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let city of filteredCities | async" [value]="city">
+      {{city}}
+    </mat-option>
+    </mat-autocomplete>
+  </form>
+  
+  <div class="mainContent" *ngIf="!showError$">
+      <div class="current-weather">
+          <div class="left">
+              <span class="locationName" [innerHTML]="location$.name + ', ' + location$.country"></span>
+              <span class="date">{{currentFullDate}}</span>
+              <div class="weatherDescription">
+                  <img [src]="CurrentWeather$.WeatherIcon" class="weatherIcon">
+                  <div class="weatherText">{{CurrentWeather$.WeatherText}}</div>
+              </div>
+              <h1 [innerHTML]="CelToFer(CurrentWeather$.Temperature,unit$) + ' ' + currentUnit"></h1>
+          </div>
+          <div class="right">
+              <mat-icon class="favorite" (click)="favoriteAction()" [innerHTML]="icon"></mat-icon>
+          </div>
+      </div>
+      <div class="current-stat">
+          <div class = "item"> 
+              <div class="title">
+                Statistics
+              </div>
+  
+              
+              <div class = "des">
+                Feels Like
+                <div class="val" [innerHTML]= "CelToFer(CurrentWeather$.RealFeelTemperature,unit$) + ' '+ currentUnit"></div>
+              </div>
+              <div class = "des">
+                Feels Like Shade
+                <div class="val"  [innerHTML]= "CelToFer(CurrentWeather$.RealFeelTemperatureShade,unit$) + ' '+ currentUnit"></div>
+              </div>
+              <div class = "des">
+                 Wind
+                <div class="val">{{CurrentWeather$.Wind}}</div>
+              </div>
+              <div class = "des">
+                Humidity
+                <div class="val">{{CurrentWeather$.RelativeHumidity}}</div>
+              </div>
+              <br>
+            </div>
+      </div>
+  </div>
+  

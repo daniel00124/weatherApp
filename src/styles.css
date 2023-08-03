@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+ body { 
+    margin: 0;
+    padding: 0;
+    background-image: url('./assets/images/light.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+ }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.dark-mode .header{
+    background: rgba(0,0,0,0.6) !important;
+}
+.dark-mode .item{
+    color:white  !important;
+  }
+ body.dark-mode{
+    background-image: url('./assets/images/dark.jpg');
+}
+.dark-mode #Mod{
+    color: white;
+    background-color: black;
+}
+.dark-mode .navIcon{
+    color: white !important;
+}

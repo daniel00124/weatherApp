@@ -1,0 +1,29 @@
+<div class="list" *ngIf="Favorites.length>=1">
+
+    <div class="upper">
+      <div class="item" id="title">
+        <h1>Favorites Location Weather</h1>
+      </div>
+    </div>
+    <div class="lower">
+      <div class = "item" *ngFor="let favorite of Favorites" (click)="goToWeather(favorite)" routerLink='/'> 
+        ID: {{favorite.ID}}
+        <div class="day" [innerHTML]="favorite.locationName +', ' + favorite.country">
+          {{favorite.locationName}}
+        </div>
+        <div class = "des">
+          {{favorite.date}}
+        </div>
+        <div class = "row icons">
+          <img [src]="favorite.Icon" class = "logo">
+        </div>          
+        <div class = "row">
+          <div class="night" [innerHTML]="CelToFer(favorite.Temperature,unit$) + currentUnit"></div>
+        </div>
+          
+      </div>
+    </div>
+</div>
+<div class="item noLocation" *ngIf="Favorites.length<1" >
+  <h1>No Favorites Location Yet</h1>
+</div>

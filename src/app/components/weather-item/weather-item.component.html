@@ -1,0 +1,17 @@
+<div class = "item"> 
+    <div class="day">
+      {{day}}
+    </div>
+    <div class = "des">
+      {{date}}
+    </div>
+    <div class = "row icons">
+      <img [src]="iconDay" class = "logo">
+      <img [src]="iconNight" class = "logo">
+    </div>    
+    <div class = "row">
+      <div class="day" [innerHTML]='"Day<br><br>" +  CelToFer(dayTemp,unit$)+ currentUnit'></div>
+      <div class="night"  [innerHTML]='"Night<br><br>" +  CelToFer(nightTemp,unit$)+ currentUnit'></div>
+    </div>
+      
+  </div>

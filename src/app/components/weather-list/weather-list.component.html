@@ -1,0 +1,6 @@
+<div class="list" *ngIf="!showError$">
+    <app-weather-item *ngFor = 'let item of DailyForecasts' 
+    [day]="item.day" [date]="item.date" [iconDay]="item.IconDay" [iconNight]="item.IconNight"
+     [dayTemp]="item.TemperatureDay" [nightTemp]=item.TemperatureNight
+     ></app-weather-item>
+</div>
