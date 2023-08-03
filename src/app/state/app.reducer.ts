@@ -125,18 +125,6 @@ const _appReducer = createReducer(
           Favorites:favorites
           };
       }),
-      on(AppAction.ChangeToLightMode, state => {
-        return{
-            ...state,
-            darktheme: false
-        };
-    }),
-    on(AppAction.ChangeToDarkMode, state => {
-        return{
-            ...state,
-            darktheme: true
-        };
-    }),
   );
 export function appReducer(state: any, action: any) {
 return _appReducer(state, action);

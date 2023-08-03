@@ -19,5 +19,3 @@ export const DeleteFromFavorite = createAction('DeleteFromFavorite',props<{favor
 export const UpdateFail = createAction('Update failed');
 
 
-export const ChangeToLightMode = createAction('ChangeToLightMode');
-export const ChangeToDarkMode = createAction('ChangeToDarkMode');
